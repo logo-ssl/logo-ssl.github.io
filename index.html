@@ -165,6 +165,54 @@
             text-decoration: underline;
         }
 
+        /* --- 📌 Pinned New Dataset Announcement --- */
+        .new-dataset-inline {
+            margin-top: -2.2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .new-dataset-inline a {
+            font-weight: 600;
+        }
+
+        .new-badge-inline {
+            display: inline-block;
+            margin-right: 6px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: #d93025;
+            border-radius: 12px;
+            vertical-align: middle;
+        }
+
+        
+
+        
+
+        /* 📌 Pin icon */
+        
+
+        /* New badge */
+        .new-badge {
+            display: inline-block;
+            margin-right: 8px;
+            padding: 4px 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #ffffff;
+            background: linear-gradient(135deg, #d93025, #b31412);
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(217, 48, 37, 0.35);
+        }
+
+
+
         /* --- Header & Authors --- */
         .authors {
             text-align: center;
@@ -705,6 +753,16 @@
                 <span style="font-size: 1.4em;">&#129303;</span>
                 <span>downloads on HuggingFace</span>
             </div>
+        </div>
+        <!-- 📌 New Dataset Announcement -->
+        <div class="new-dataset-inline">
+            <span class="new-badge-inline">New!</span>
+            <span>
+                <strong>SSL-HWD-Words (Labeled)</strong> dataset is now available on
+                <a href="https://huggingface.co/datasets/Shree10/SSL-HWD-Words" target="_blank">
+                    HuggingFace
+                </a>.
+            </span>
         </div>
         <!-- ========================================== -->
         <!--   UPDATED HUGGING FACE DOWNLOAD BADGE END  -->
