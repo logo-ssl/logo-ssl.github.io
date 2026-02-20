@@ -1579,9 +1579,13 @@
         }
 
         // --- HuggingFace Download Counter ---
+        // HF API returns only last-30-day downloads. We track previous months
+        // manually so the badge shows the all-time total.
+        // Nov 2025: 5 | Dec 2025: 39 | Jan 2026: 56
         document.addEventListener('DOMContentLoaded', function() {
             const datasetId = 'Shree10/SSL-HWD-Words';
             const countElement = document.getElementById('hf-download-count');
+            const previousMonthsTotal = 5 + 39 + 56; // Nov + Dec + Jan
 
             fetch('https://huggingface.co/api/datasets/' + datasetId)
                 .then(response => {
@@ -1589,15 +1593,13 @@
                     return response.json();
                 })
                 .then(data => {
-                    if (data && data.downloads !== undefined) {
-                        countElement.textContent = data.downloads.toLocaleString();
-                    } else {
-                        countElement.textContent = '0';
-                    }
+                    const currentMonth = (data && data.downloads !== undefined) ? data.downloads : 0;
+                    const allTime = previousMonthsTotal + currentMonth;
+                    countElement.textContent = allTime.toLocaleString();
                 })
                 .catch(error => {
                     console.error('Error fetching HuggingFace stats:', error);
-                    countElement.textContent = 'N/A';
+                    countElement.textContent = previousMonthsTotal.toLocaleString();
                 });
         });
 
